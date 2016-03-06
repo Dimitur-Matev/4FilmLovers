@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	"use strict";
 	var ENDPOINT = "http://localhost:3000";
-	var filmsENDPOINT = ENDPOINT + "/films" 
+	var filmsENDPOINT = ENDPOINT + "/films";
 
 	function parse(str) {
 	    var args = [].slice.call(arguments, 1),
@@ -65,10 +65,12 @@ $(document).ready(function() {
   			return button.prop('outerHTML');
  		}
  		function moreInfoButton(film){
- 			var button = $("<a />");
- 			button.attr("href", "#");
+ 			var button = $("<button />");
+ 			button.attr("type","button");
+ 			button.addClass("more-info");
  			button.addClass("btn btn-default add-to-cart");
  			button.append("More info");
+ 			button.attr("data-task-id", film.id);
  			return button.prop('outerHTML');
  		}
  		function addFilmToList(film) {
@@ -106,5 +108,14 @@ $(document).ready(function() {
  		$("#Films-List").html("");
  		_.forEach(response, addFilmToList);
  	});
+
+	$(document).on('click', '.more-info', function() {
+
+	    var id = $(this).attr('data-task-id');
+
+	    if (id != undefined && id != null) {
+	        window.location = '../WebContent/film-details.html?id=' + id;
+	    }
+	});
 
 });
