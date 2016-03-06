@@ -22,7 +22,7 @@
   "films": [
     {
       "id": 1,
-      "name": "Avengers: Age of Ultron",
+      "title": "Avengers: Age of Ultron",
       "type": "Action,Adventure,Sci-Fi",
       "description": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
       "trailer": "",
@@ -30,7 +30,7 @@
       "actors": null,
       "Date": "2015-05-1",
       "rating": 7.6,
-      "imagePath": ""
+      "imagePath": "../WebContent/images/home/thumb_3488_stenik_movies_image_index.jpeg"
     }
   ],
   "actors": [
