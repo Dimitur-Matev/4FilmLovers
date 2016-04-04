@@ -23,6 +23,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/redmond/jquery-ui.css" rel="stylesheet" />
 </head><!--/head-->
 
 <body>
@@ -63,29 +64,13 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.html" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-								<li><a href="404.html">404</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search Films"/>
+							<input id="film-search" type="text" placeholder="Search Films"/>
 						</div>
 					</div>
 				</div>
@@ -146,58 +131,58 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">New Films</a></h4>
+									<h4 class="panel-title"><button id="New Films" class="category btn btn-default add-to-cart">New Films</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Adventure</a></h4>
+									<h4 class="panel-title"><button id="Adventure" class="category btn btn-default add-to-cart">Adventure</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Sci-Fi</a></h4>
+									<h4 class="panel-title"><button id="Sci-Fi" class="category btn btn-default add-to-cart">Sci-Fi</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Action</a></h4>
+									<h4 class="panel-title"><button id="Action" class="category btn btn-default add-to-cart">Action</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Comedy</a></h4>
+									<h4 class="panel-title"><button id="Comedy" class="category btn btn-default add-to-cart">Comedy</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Drama</a></h4>
+									<h4 class="panel-title"><button id="Drama" class="category btn btn-default add-to-cart">Drama</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Fantasy</a></h4>
+									<h4 class="panel-title"><button id="Fantasy" class="category btn btn-default add-to-cart">Fantasy</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Documentary</a></h4>
+									<h4 class="panel-title"><button id="Documentary" class="category btn btn-default add-to-cart">Documentary</button></h4>
 								</div>
 							</div>
 							
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Crime</a></h4>
+									<h4 class="panel-title"><button id="Crime" class="category btn btn-default add-to-cart">Crime</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Horror</a></h4>
+									<h4 class="panel-title"><button id="Horror" class="category btn btn-default add-to-cart">Horror</button></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Biography</a></h4>
+									<h4 class="panel-title"><button id="Biography" class="category btn btn-default add-to-cart">Biography</button></h4>
 								</div>
 							</div>
 						</div><!--/category-products-->
@@ -248,6 +233,7 @@
 				</div>
 			</div>
 		</div>
+		<a class="youtube" href="http://www.youtube.com/watch?v=4eYSpIz2FjU">Link title</a>
 		
 	</footer><!--/Footer-->
 	
@@ -262,5 +248,10 @@
     <script src="js/rating.min.js"></script>
     <script src="js/home.js"></script>
     <script src="js/lodash-3.10.1.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/categorySort.js"></script>
+    <script src="js/bootstrap.youtubepopup.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

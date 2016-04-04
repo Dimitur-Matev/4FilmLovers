@@ -63,29 +63,13 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.html" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-								<li><a href="404.html">404</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search Films"/>
+							<input id="film-search" type="text" placeholder="Search Films"/>
 						</div>
 					</div>
 				</div>
@@ -164,25 +148,10 @@
 				</div>
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
 				<div class="col-sm-9 padding-right">
-					<div class="product-details"><!--product-details-->
-						<div class="col-sm-5">
-							<div class="view-product">
-								<img src="images/product-details/1.jpg" heigh="266" width= "381" alt="" />
-							</div>
-						</div>
-						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
-								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-								<p>Web ID: 1089772</p>
-								<img src="images/product-details/rating.png" alt="" />
-								<p><b>Availability:</b> In Stock</p>
-								<p><b>Condition:</b> New</p>
-								<p><b>Brand:</b> E-SHOPPER</p>
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
-						</div>
-					</div><!--/product-details-->
+					<div class="film-details">
+						
+					</div>
+				</div><!--/product-details-->
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
 						
@@ -214,5 +183,7 @@
     <script src="js/rating.min.js"></script>
     <script src="js/details.js"></script>
     <script src="js/lodash-3.10.1.js"></script>
+    <script src="js/search.js"></script>
+
 </body>
 </html>

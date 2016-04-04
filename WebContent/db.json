@@ -25,12 +25,12 @@
       "title": "Avengers: Age of Ultron",
       "type": "Action,Adventure,Sci-Fi",
       "description": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
-      "trailer": "",
+      "trailer": "https://www.youtube.com/watch?v=tmeOjFno6Do",
       "watchHere": "http://avengersonlinemovie.ga/avengers-age-of-ultron-full-movie.mp4",
       "actors": null,
-      "Date": "2015-05-1",
+      "date": "2015-05-1",
       "rating": 7.6,
-      "imagePath": "../WebContent/images/home/thumb_3488_stenik_movies_image_index.jpeg"
+      "imagePath": "../WebContent/images/home/Poster-avengers-age-of-ultron.jpg"
     }
   ],
   "actors": [

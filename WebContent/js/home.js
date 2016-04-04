@@ -2,6 +2,7 @@ $(document).ready(function() {
 	"use strict";
 	var ENDPOINT = "http://localhost:3000";
 	var filmsENDPOINT = ENDPOINT + "/films";
+	var selectedCategory = "New Films";
 
 	function parse(str) {
 	    var args = [].slice.call(arguments, 1),
@@ -21,11 +22,7 @@ $(document).ready(function() {
 		var myRating = rating(el, currentRating, maxRating, callback);
 	};
 
-	$.ajax(filmsENDPOINT, {
- 		method: "GET",
- 		dataType: "json"
- 	}).then(function(response) {
- 		function addContentToDIV(content, classOfDiv){
+	function addContentToDIV(content, classOfDiv){
  			var newContent = $("<div />");
  			newContent.append(content);
  			newContent.addClass(classOfDiv);
@@ -43,12 +40,6 @@ $(document).ready(function() {
 
  			var newRating = $("<ul />");
  			newRating.addClass("c-rating");
- 			//console.log(rating);
- 			//var currentRating = film.rating;
-			//var maxRating= 10;
-			//var callback = function(rating) { alert(rating); };
- 			//var myRating = rating(newRating, currentRating, maxRating, callback);
- 			//console.log(myRating);
  			return newRating.prop('outerHTML');
  		}
  		function moreInfo(film){
@@ -59,7 +50,8 @@ $(document).ready(function() {
  		}
  		function trailerButton(film){
  			var button = $("<a />");
- 			button.attr("href", "#");
+ 			button.addClass("youtube");
+ 			button.attr("href", film.trailer);
  			button.addClass("btn btn-default add-to-cart");
  			button.append("Trailer");
   			return button.prop('outerHTML');
@@ -105,9 +97,8 @@ $(document).ready(function() {
  			$(".Films-List").append(content);
  			setRating(film.rating);
  		}
- 		$("#Films-List").html("");
- 		_.forEach(response, addFilmToList);
- 	});
+
+ 	
 
 	$(document).on('click', '.more-info', function() {
 
@@ -117,5 +108,43 @@ $(document).ready(function() {
 	        window.location = '../WebContent/film-details.html?id=' + id;
 	    }
 	});
+
+
+	
+   
+	$(document).on('click', '.category', function() {
+		var id = $(this).attr('id');
+		selectedCategory = id;
+
+		if(selectedCategory == "New Films"){
+			$.ajax(filmsENDPOINT, {
+		 		method: "GET",
+		 		dataType: "json"
+		 	}).then(function(response) {
+		 		
+		 		$(".Films-List").html("");
+		 		_.forEach(response, addFilmToList);
+		 		$(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
+
+		 	});
+	 	} else {
+	 		$.ajax(filmsENDPOINT, {
+		 		method: "GET",
+		 		data: { type: selectedCategory },
+		 		dataType: "json"
+		 	}).then(function(response) {
+		 		
+		 		$(".Films-List").html("");
+		 		_.forEach(response, addFilmToList);
+		 		$("#category-title").val("");
+		 		$(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
+
+		 	});
+	 	}
+
+	});
+	
+
+
 
 });
