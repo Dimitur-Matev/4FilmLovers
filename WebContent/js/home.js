@@ -18,9 +18,16 @@ $(document).ready(function() {
 		var el = document.querySelector('.c-rating');
 		var currentRating = curRating;
 		var maxRating= 10;
-		var callback = function(rating) { alert(rating); };
+		var callback = function(rating) { 
+		//	alert(rating); 
+		};
 		var myRating = rating(el, currentRating, maxRating, callback);
 	};
+	function accountName(){
+		var name = $("#account");
+		name.text(document.cookie);
+		console.log(name.text());
+	}
 
 	function addContentToDIV(content, classOfDiv){
  			var newContent = $("<div />");
@@ -75,7 +82,6 @@ $(document).ready(function() {
  			filmContent.append(moreInfoButton(film));
  			filmContent.addClass("productinfo text-center");
  			filmContent.attr("data-task-id", film.id);
- 			
 
  			var contentOverlay = $("<div />");
  			contentOverlay.append(parse("<p> %s </p>",film.title));
@@ -98,53 +104,108 @@ $(document).ready(function() {
  			setRating(film.rating);
  		}
 
- 	
+ 	accountName();
 
 	$(document).on('click', '.more-info', function() {
 
 	    var id = $(this).attr('data-task-id');
 
-	    if (id != undefined && id != null) {
-	        window.location = '../WebContent/film-details.html?id=' + id;
+	    if (id != undefined && id != null && document.cookie != null && document.cookie != "") {
+	        window.location = '/4FilmLovers/film-details.html?id=' + id;
+	    }else{
+	    	window.location = '/4FilmLovers/login.html?page=home.html';
 	    }
 	});
 
+	function listAllFilms(){
+		$.ajax(filmsENDPOINT, {
+		 		method: "GET",
+		 		dataType: "json"
+		 	}).then(function(response) {
+		 		
+		 		$(".Films-List").html("");
+		 		_.forEach(response, addFilmToList);
+		 		$(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
 
-	
+		 	});
+	}
    
 	$(document).on('click', '.category', function() {
 		var id = $(this).attr('id');
 		selectedCategory = id;
 
 		if(selectedCategory == "New Films"){
-			$.ajax(filmsENDPOINT, {
-		 		method: "GET",
-		 		dataType: "json"
-		 	}).then(function(response) {
-		 		
-		 		$(".Films-List").html("");
-		 		_.forEach(response, addFilmToList);
-		 		$(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
-
-		 	});
+			listAllFilms();
 	 	} else {
 	 		$.ajax(filmsENDPOINT, {
 		 		method: "GET",
-		 		data: { type: selectedCategory },
 		 		dataType: "json"
 		 	}).then(function(response) {
-		 		
+		 		console.log(response);
 		 		$(".Films-List").html("");
-		 		_.forEach(response, addFilmToList);
+		 		response.forEach(function(film){
+
+		 			var lowCase = [];
+		 			var arr = film.type.split(",");
+					for (var i = 0; i < arr.length; i++) {
+					    lowCase.push(arr[i].toLowerCase());
+					}
+		 			lowCase.forEach(function(element){
+		 				if(selectedCategory.toLowerCase() == element){
+		 					console.log(film);
+		 					addFilmToList(film);
+		 				}
+		 			});
+		 		});
 		 		$("#category-title").val("");
 		 		$(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
-
+		 		
 		 	});
 	 	}
 
 	});
-	
+
+	$('input[type=text]').on('keydown', function(e) {
+	    if (e.which == 13) {
+	    	var filmTitle = document.getElementById('film-search').value;
+	        $.ajax(filmsENDPOINT, {
+		 		method: "GET",
+		 		dataType: "json"
+		 	}).then(function(response) {
+		 		console.log(response);
+		 		$(".Films-List").html("");
+		 		response.forEach(function(film){
+
+		 			var lowCase = [];
+		 			var arr = film.title.split(" ");
+					for (var i = 0; i < arr.length; i++) {
+					    lowCase.push(arr[i].toLowerCase());
+					}
+		 			lowCase.forEach(function(element){
+		 				if(filmTitle.toLowerCase() == element){
+		 					console.log(film);
+		 					addFilmToList(film);
+		 				}
+		 			});
+		 		});
+		 		$("#category-title").val("");
+		 		$(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
+		 		
+		 	});
+
+	        e.preventDefault();
+	    }
+	});
 
 
+	$("#addNewFilm").click(function(){
+	    if (document.cookie != null && document.cookie != undefined && document.cookie != "") {
+	        window.location = '/4FilmLovers/film-create.html';
+	    }else{
+	    	window.location = '/4FilmLovers/login.html?page=home.html';
+	    }
+	});
+
+	listAllFilms();
 
 });

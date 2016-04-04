@@ -4,7 +4,7 @@
       "id": 1,
       "username": "BRANIAC_30",
       "email": "example@gmail.com",
-      "password": "b89eaac7e61417341b710b727768294d0e6a277b",
+      "password": "1234",
       "type": {
         "name": "administrator"
       }
@@ -17,20 +17,86 @@
       "type": {
         "name": "regular"
       }
+    },
+    {
+      "username": "drago",
+      "email": "drago@abv.bg",
+      "password": 1234,
+      "type": {
+        "name": "regular"
+      },
+      "id": 3
+    },
+    {
+      "username": "Rumi",
+      "email": "drujba@gmail.com",
+      "password": 1234,
+      "type": {
+        "name": "regular"
+      },
+      "id": 4
     }
   ],
   "films": [
     {
       "id": 1,
-      "title": "Avengers: Age of Ultron",
+      "title": "Avengers Age of Ultron",
       "type": "Action,Adventure,Sci-Fi",
       "description": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
       "trailer": "https://www.youtube.com/watch?v=tmeOjFno6Do",
       "watchHere": "http://avengersonlinemovie.ga/avengers-age-of-ultron-full-movie.mp4",
-      "actors": null,
+      "actors": "Robert Downey Jr.,Chris Hemsworth,Scarlett Johansson",
       "date": "2015-05-1",
       "rating": 7.6,
-      "imagePath": "../WebContent/images/home/Poster-avengers-age-of-ultron.jpg"
+      "imagePath": "../4FilmLovers/images/home/Poster-avengers-age-of-ultron.jpg"
+    },
+    {
+      "title": "Anna Dressed in Blood",
+      "date": "2014-02-12",
+      "actors": "Anna",
+      "type": "Horror",
+      "rating": 5,
+      "description": "Book <3333",
+      "trailer": "https://www.youtube.com/watch?v=TUleC93ATrM",
+      "watchHere": "",
+      "imagePath": "../4FilmLovers/images/home/Anonymous.png",
+      "id": 2
+    },
+    {
+      "title": "asdfa",
+      "date": "yayayay",
+      "actors": "asdf",
+      "type": "adsf",
+      "rating": 5,
+      "description": "asdf",
+      "trailer": "asdf",
+      "watchHere": "",
+      "imagePath": "../4FilmLovers/images/home/Anonymous.png",
+      "id": 3
+    },
+    {
+      "title": "Captain America Civil War",
+      "date": "2016-05-01",
+      "actors": "",
+      "type": "Action,Adventure,Sci-Fi",
+      "rating": 5,
+      "description": "Captain America: Civil War brings Steve Rogers' main arc to a close while kicking-off the journeys (and franchises) of Black Panther and Spiderman. The Russo brothers made a tight, impressive, political thriller with Captain America: Winter Solider, and have described Civil War as a \"psychological thriller\" with Brian De Palma and the classic Se7en as inspiration. (I really hope no one gets sent a box...) Readers of the Civil War comics may be a little worried about who will make it out of this one alive, but all will be revealed on May 6! Honestly, I'm just super excited to see the Avengers go head-to-head in what critics have been calling the best superhero dust-up of ALL TIME. Can. Not. Wait. #teamcap - Vanessa",
+      "trailer": "https://www.youtube.com/watch?v=uVdV-lxRPFo",
+      "watchHere": "",
+      "imagePath": "../4FilmLovers/images/home/Civil_War_Final_Poster.jpg",
+      "id": 4
+    },
+    {
+      "title": "Paper Towns",
+      "date": 2015,
+      "actors": " Nat Wolff, Cara Delevingne, Austin Abrams ",
+      "type": "Drama, Mystery, Romance",
+      "rating": 5,
+      "description": "After an all night adventure, Quentin's life-long crush, Margo, disappears, leaving behind clues that Quentin and his friends follow on the journey of a lifetime.",
+      "trailer": "https://www.youtube.com/watch?v=rFGiHm5WMLk",
+      "watchHere": "",
+      "imagePath": "../4FilmLovers/images/home/papertowns-pos.jpg",
+      "id": 5
     }
   ],
   "actors": [
